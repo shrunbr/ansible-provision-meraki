@@ -1,0 +1,104 @@
+---
+  - name: Create office network
+    meraki_network:
+       auth_key: "{{ auth_key }}"
+       state: present
+       org_name: "{{ org_name }}"
+       name: "{{ site_name }}"
+       type: combined
+    register: off_network
+
+  - name: Add MX1 to Network
+    meraki_device:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       serial: "{{ mx1_serial }}"
+    register: off_add_mx1
+
+  - name: Add MX2 to Network
+    meraki_device:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       serial: "{{ mx2_serial }}"
+    register: off_add_mx2
+
+  - name: Update MX1 Information
+    meraki_device:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       serial: "{{ mx1_serial }}"
+       name: "R{{ site_abbv }}01"
+    register: off_update_mx1
+
+  - name: Update MX2 Information
+    meraki_device:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       serial: "{{ mx2_serial }}"
+       name: "R{{ site_abbv }}02"
+    register: off_update_mx2
+
+  - name: Add Switch1 to Network
+    meraki_device:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       serial: "{{ switch1_serial }}"
+    register: off_add_sw1
+
+  - name: Add Switch2 to Network
+    meraki_device:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       serial: "{{ switch2_serial }}"
+    register: off_add_sw2
+
+  - name: Update Switch1 Information
+    meraki_device:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       serial: "{{ switch1_serial }}"
+       name: "S{{ site_abbv }}LS01"
+    register: off_update_sw1
+
+  - name: Update Switch2 Information
+    meraki_device:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       serial: "{{ switch2_serial }}"
+       name: "S{{ site_abbv }}LS02"
+    register: off_update_sw2
+
+  - name: Add AP to Network
+    meraki_device:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       serial: "{{ ap_serial }}"
+    register: off_add_ap
+
+  - name: Update AP Information
+    meraki_device:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       serial: "{{ ap_serial }}"
+       name: "{{ site_abbv }}WAP01"
+    register: off_update_ap

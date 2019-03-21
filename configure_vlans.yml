@@ -1,0 +1,44 @@
+---
+  - name: Create Management Subnet
+    meraki_vlan:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       name: Management
+       vlan_id: 1
+       subnet: "{{ mgmt_subnet }}.0/24"
+       appliance_ip: "{{ mgmt_subnet }}.1"
+
+  - name: Create User Subnet
+    meraki_vlan:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       name: Users
+       vlan_id: 10
+       subnet: "{{ user_subnet }}.0/24"
+       appliance_ip: "{{ user_subnet }}.1"
+
+  - name: Create Printer Subnet
+    meraki_vlan:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       name: Printers
+       vlan_id: 20
+       subnet: "{{ printer_subnet }}.0/24"
+       appliance_ip: "{{ printer_subnet }}.1"
+
+  - name: Create Wireless Subnet
+    meraki_vlan:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       name: Wireless
+       vlan_id: 89
+       subnet: "{{ wireless_subnet }}.0/24"
+       appliance_ip: "{{ wireless_subnet }}.1"

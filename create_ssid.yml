@@ -1,0 +1,47 @@
+---
+  - name: Generate RADIUS Key
+    shell: pwgen -scBv 15 1
+    register: radius_key
+
+  - name: Delete Default SSID
+    meraki_ssid:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: absent
+       name: "{{ site_name }} - wireless WiFi"
+    register: off_delete_default_ssid
+
+  - name: Setup Wireless SSID
+    meraki_ssid:
+       auth_key: "{{ auth_key }}"
+       org_name: "{{ org_name }}"
+       net_id: "{{ off_network.data.id }}"
+       state: present
+       auth_mode: 8021x-radius
+       enabled: yes
+       encryption_mode: wpa-eap
+       ip_assignment_mode: Layer 3 roaming
+       name: *ENTER SSID NAME HERE*
+       number: 1
+       splash_page: None
+       radius_servers:
+         - host: X.X.X.X
+           port: 1812
+           secret: "{{ radius_key.stdout }}"
+         - host: X.X.X.X
+           port: 1812
+           secret: "{{ radius_key.stdout }}"
+         - host: X.X.X.X
+           port: 1812
+           secret: "{{ radius_key.stdout }}"
+       use_vlan_tagging: yes
+       default_vlan_id: XX
+       wpa_encryption_mode: WPA2 only
+    register: off_setup_ssid
+
+  - name: RADIUS Key
+    debug:
+      msg:
+        - 'RADIUS Key Is Below. Import that and the management subnet into ClearPass.'
+        - '{{ radius_key.stdout }}'

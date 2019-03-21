@@ -1,0 +1,66 @@
+---
+- name: Create Office
+  hosts: localhost
+  debugger: on_failed
+  vars:
+    auth_key: *ENTER API KEY HERE*
+    org_name: *ENTER ORG NAME HERE*
+
+  vars_prompt:
+     - name: "site_name"
+       prompt: "Please enter the name of the site"
+       private: no
+#     - name: "site_addr"
+#       prompt: "Enter the locations address"
+#       private: no
+     - name: "site_abbv"
+       prompt: "Please enter the site abbrivation (ex ABC)"
+       private: no
+     - name: "mx1_serial"
+       prompt: "Enter the serial number of MX 1"
+       private: no
+     - name: "mx2_serial"
+       prompt: "Enter the serial number of MX 2"
+       private: no
+     - name: "switch1_serial"
+       prompt: "Enter the serial number of switch 1"
+       private: no
+     - name: "switch2_serial"
+       prompt: "Enter the serial number of switch 2"
+       private: no
+     - name: "ap_serial"
+       prompt: "Enter the serial number of the ap"
+       private: no
+     - name: "mgmt_subnet"
+       prompt: "Enter the management subnet (ex. 192.168.1; leave off the last octect)"
+       private: no
+     - name: "user_subnet"
+       prompt: "Enter the user subnet (ex. 192.168.1; leave off the last octect)"
+       private: no
+     - name: "printer_subnet"
+       prompt: "Enter the printer subnet (ex. 192.168.1; leave off the last octect)"
+       private: no
+     - name: "wireless_subnet"
+       prompt: "Enter the wireless subnet (ex. 192.168.1; leave off the last octect)"
+       private: no
+
+
+  tasks:
+   - name: Claim Devices
+     include_tasks: claim_devices.yml
+
+   - name: Configure SSID
+     include_tasks: create_ssid.yml
+
+   - name: Configure Switchports
+     include_tasks: configure_switches.yml
+
+   - name: MX Configuration Prompt
+     pause:
+       prompt: "ENABLE VLANS ON THE MXs THEN PRESS ENTER TO CONTINUE"
+     register: vlans_enabled
+
+   - name: Configure MXs
+     include_tasks: configure_vlans.yml
+
+

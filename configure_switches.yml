@@ -1,0 +1,486 @@
+---
+  - name: Configure Switch1 Port1
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 1
+       name: User Access
+       type: access
+       vlan: 10
+    
+  - name: Configure Switch1 Port2
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present         
+       number: 2
+       name: User Access         
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port3
+    meraki_switchport:           
+       auth_key: "{{ auth_key }}"    
+       serial: "{{ switch1_serial }}"
+       state: present      
+       number: 3           
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port4
+    meraki_switchport:           
+       auth_key: "{{ auth_key }}"    
+       serial: "{{ switch1_serial }}"
+       state: present      
+       number: 4           
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port5
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 5
+       name: "{{ site_abbv }}WAP-01"
+       type: trunk
+       vlan: 1
+       allowed_vlans:
+         - 1
+         - 89
+
+  - name: Configure Switch1 Port6
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 6
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port7
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 7
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port8
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 8
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port9
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 9
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port10
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 10
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port11
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 11
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port12
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 12
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port13
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 13
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port14
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 14
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port15
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 15
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port16
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 16
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port17
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 17
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port18
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 18
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port19
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 19
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port20
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 20
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port21
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 21
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure Switch1 Port22
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 22
+       name: Printer 1
+       type: access
+       vlan: 20
+
+  - name: Configure Switch1 Port23
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 23
+       name: "R{{ site_abbv }}01"
+       type: trunk
+       vlan: 1
+
+  - name: Configure Switch1 Port24
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch1_serial }}"
+       state: present
+       number: 24
+       name: "R{{ site_abbv }}02"
+       type: trunk
+       vlan: 1
+
+  - name: Configure switch2 Port1             
+    meraki_switchport:           
+       auth_key: "{{ auth_key }}"       
+       serial: "{{ switch2_serial }}"         
+       state: present            
+       number: 1
+       name: User Access         
+       type: access        
+       vlan: 10                 
+    
+  - name: Configure switch2 Port2
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 2
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port3
+    meraki_switchport:           
+       auth_key: "{{ auth_key }}"    
+       serial: "{{ switch2_serial }}"
+       state: present      
+       number: 3           
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port4
+    meraki_switchport:           
+       auth_key: "{{ auth_key }}"    
+       serial: "{{ switch2_serial }}"
+       state: present      
+       number: 4           
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port5
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 5
+       name: "Extra AP"
+       type: trunk
+       vlan: 1
+       allowed_vlans:
+         - 1
+         - 89
+
+  - name: Configure switch2 Port6
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 6
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port7
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 7
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port8
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 8
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port9
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 9
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port10
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 10
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port11
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 11
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port12
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 12
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port13
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 13
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port14
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 14
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port15
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 15
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port16
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 16
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port17
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 17
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port18
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 18
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port19
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 19
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port20
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 20
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port21
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 21
+       name: User Access
+       type: access
+       vlan: 10
+
+  - name: Configure switch2 Port22
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 22
+       name: Printer 2
+       type: access
+       vlan: 20
+
+  - name: Configure switch2 Port23
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 23
+       name: "R{{ site_abbv }}01"
+       type: trunk
+       vlan: 1
+
+  - name: Configure switch2 Port24
+    meraki_switchport:
+       auth_key: "{{ auth_key }}"
+       serial: "{{ switch2_serial }}"
+       state: present
+       number: 24
+       name: "R{{ site_abbv }}02"
+       type: trunk
+       vlan: 1
