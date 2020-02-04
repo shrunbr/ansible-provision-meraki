@@ -1,6 +1,10 @@
 # ansible-provision-meraki
 Provision Meraki devices with Ansible! (Create Network, Claim Devices, Configure, etc)
 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
+
 ## Prerequisites
 * Ansible 2.7+
 * Meraki Devices
