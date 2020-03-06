@@ -38,3 +38,4 @@ https://documentation.meraki.com/zGeneral_Administration/Other_Topics/The_Cisco_
 ## Running the playbook
 Once you have all the files customized to your liking and in the same directory you'll want to target "create_office.yml" with your ansible-playbook command. If you run into error be sure to append -vvv to it for extreme debugging output.
   
+Example: ansible-playbook create_office.yml (-vvv for extreme debugging)
